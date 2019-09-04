@@ -1,0 +1,14 @@
+<article *ngIf="pokemon" class="pokemonCard">
+
+    <h1 class="pokemonCard__name">
+        {{ pokemon.name }}
+    </h1>
+    <img src="{{ pokemon.sprite }}" alt="image of {{ pokemon.name }}">
+        
+    <ul class="pokemonCard__typesList">
+        <li *ngFor="let type of pokemon.typeList" class="pokemonCard__typeItem">
+            {{ type }}
+        </li>
+    </ul>
+        
+</article>

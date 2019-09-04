@@ -1,0 +1,21 @@
+<ul class="pokemonsList">
+    <a *ngFor="let pokemon of pokemons$ | async"
+        routerLink="/pokemon/{{ pokemon.id }}"
+        class="pokemonList__pokemonItemWrapper">
+
+        <li class="pokemonsList__pokemonItem">
+        
+            <h2 class="pokemonItem__name">
+                {{ pokemon.name }}
+            </h2>
+
+            <img src="{{ pokemon.sprite }}"
+                 alt="image of {{ pokemon.name }}"
+                 class="pokemonItem__image">
+                
+        </li>
+
+    </a>
+</ul>
+
+<app-paginator [offset]="offset"></app-paginator>

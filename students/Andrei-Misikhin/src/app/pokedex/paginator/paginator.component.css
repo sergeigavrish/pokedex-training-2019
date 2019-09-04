@@ -1,0 +1,23 @@
+:host {
+    display: flex;
+    margin: 20px;
+}
+
+.paginator {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    list-style-type: none;
+}
+
+.paginator__firstPage,
+.paginator__lastPage,
+.paginator__middlePage {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+.paginator__middlePage_active {
+    font-weight: bold;
+}

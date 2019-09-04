@@ -1,0 +1,24 @@
+<ul class="paginator" *ngIf="currentPage$ | async; let currentPage">
+
+    <li class="paginator__firstPage">
+        <a *ngIf="currentPage !== 1" routerLink="/pokemons">
+            <<
+        </a>
+    </li>
+
+    <li *ngFor="let page of middlePages" class="paginator__middlePage">
+        <a *ngIf="page && page.page !== currentPage" routerLink="/pokemons" [queryParams]="page">
+            {{ page.page }}
+        </a>
+        <a *ngIf="page && page.page === currentPage" class="paginator__middlePage_active">
+            {{ page.page }}
+        </a>
+    </li>
+
+    <li class="paginator__lastPage">
+        <a *ngIf="lastPage && currentPage !== lastPage.page" routerLink="/pokemons" [queryParams]="lastPage" >
+            >>
+        </a>
+    </li>
+
+</ul>
